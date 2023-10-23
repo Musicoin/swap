@@ -1,0 +1,21 @@
+{
+  "name": "swap",
+  "version": "1.0.0",
+  "description": "contains the code of the Musicoin swap",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.18.1",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastest-validator": "^1.17.0",
+    "mongoose": "^7.6.3"
+  }
+}
