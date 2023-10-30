@@ -74,9 +74,10 @@ async function main() {
 async function addToUserBalance(balance, walletAddress, kind) {
   swapUser = await dbSwap.findOne({ address: walletAddress, kind: kind });
   if (swapUser) {
-    swapUser.balance = swapUser.balance + balance;
+    swapUser.balance = parseFloat(swapUser.balance + balance).toFixed(18);
+    swapUser.save();
   } else {
-    dbSwap.create({ address: walletAddress, balance, kind });
+    dbSwap.create({ address: walletAddress, balance: parseFloat(balance).toFixed(18), kind });
   }
 }
 
@@ -112,6 +113,7 @@ async function distributeShares(release, balance) {
       console.log('artist not found');
       console.log(release, balance);
       artistNotFoundBalances.push({ release: release, balance: balance });
+      await addToUserBalance(balance, release.artistAddress, 'EOA');
     }
   }
 }

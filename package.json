@@ -4,7 +4,10 @@
   "description": "contains the code of the Musicoin swap",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "node": "npx hardhat node",
+    "deploy": "npx hardhat run --network skale scripts/deploy-token.js",
+    "separate": "npx hardhat run --network skale scripts/separate-wallets.js",
+    "transfer": "npx hardhat run --network skale scripts/transfer-EOA-wallets.js"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +17,7 @@
     "prettier": "^3.0.3"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
     "dotenv": "^16.3.1",
     "fastest-validator": "^1.17.0",
     "mongoose": "^7.6.3"
