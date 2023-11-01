@@ -1,15 +1,12 @@
-const batchSize = 100;
-
 async function main() {
   let [deployer] = await ethers.getSigners();
 
-  const address = await deployer.getAddress();
+  const address = deployer.address;
 
   const musicFactory = await ethers.getContractFactory('MusicWithMinting', deployer);
-  this.musicToken = await musicFactory.deploy(address);
-  const tokenAddress = await this.musicToken.getAddress();
+  const musicToken = await musicFactory.deploy(address);
 
-  console.log('$music deployed to ' + tokenAddress);
+  console.log('$music deployed to ' + musicToken.address);
 }
 
 main()

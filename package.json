@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "node": "npx hardhat node",
-    "deploy": "npx hardhat run --network skale scripts/deploy-token.js",
+    "deploy-token": "npx hardhat run --network skale scripts/deploy-token.js",
+    "deploy-multicall": "npx hardhat run --network skale scripts/deploy-multicall.js",
     "separate": "npx hardhat run --network skale scripts/separate-wallets.js",
     "transfer": "npx hardhat run --network skale scripts/transfer-EOA-wallets.js",
     "validate": "npx hardhat run --network skale scripts/validate-transfers.js"
