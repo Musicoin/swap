@@ -4,14 +4,15 @@ require('dotenv').config();
 /** @type import('hardhat/config').HardhatUserConfig */
 
 module.exports = {
-  defaultNetwork: 'hardhat',
+  defaultNetwork: 'skale',
   solidity: {
-    version: '0.8.20',
+    version: '0.8.19',
     settings: {
       optimizer: {
         enabled: true,
-        runs: 200,
+        runs: 1000,
       },
+      evmVersion: 'paris',
     },
   },
   paths: {
@@ -30,6 +31,10 @@ module.exports = {
     },
     skale: {
       url: process.env.SKALE_ENDPOINT,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC,
       accounts: [process.env.PRIVATE_KEY],
     },
   },

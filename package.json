@@ -7,17 +7,18 @@
     "node": "npx hardhat node",
     "deploy": "npx hardhat run --network skale scripts/deploy-token.js",
     "separate": "npx hardhat run --network skale scripts/separate-wallets.js",
-    "transfer": "npx hardhat run --network skale scripts/transfer-EOA-wallets.js"
+    "transfer": "npx hardhat run --network skale scripts/transfer-EOA-wallets.js",
+    "validate": "npx hardhat run --network skale scripts/validate-transfers.js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.18.1",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.11.2",
     "prettier": "^3.0.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/contracts": "^4.7.3",
     "dotenv": "^16.3.1",
     "fastest-validator": "^1.17.0",
     "mongoose": "^7.6.3"
